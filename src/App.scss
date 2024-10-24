@@ -6,8 +6,40 @@
 
 .App-header {
   background-color: #1a1a2e;
-  padding: 20px;
   color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  transition: all 0.3s ease;
+  padding: 20px;
+
+  &.scrolled {
+    padding: 8px;
+
+    .logo {
+      width: 35px;
+      height: 35px;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+    }
+
+    .language-button {
+      padding: 4px 8px;
+      
+      .language-name {
+        font-size: 0.8em;
+      }
+      
+      .flag-icon {
+        width: 16px;
+        height: 12px;
+      }
+    }
+  }
 }
 
 .header-content {
@@ -22,21 +54,75 @@
   width: 50px;
   height: 50px;
   margin-right: 20px;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  transition: all 0.3s ease;
+  margin: 0;
+}
+
+.language-selector {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .flag-icon {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+
+  .language-name {
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+  }
 }
 
 .sticky-filter {
-  position: sticky;
-  top: 0;
-  background-color: #f0f2f5;
+  position: fixed;
+  top: 88px;
+  left: 0;
+  right: 0;
+  background-color: #b0b398;
   padding: 10px 0;
   z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &.scrolled {
+    top: 51px;
+  }
 }
 
 .content-wrapper {
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 160px auto 0;
   padding: 20px;
 }
 
@@ -50,7 +136,7 @@ main {
   width: 160px;
   height: 600px;
   position: sticky;
-  top: 80px;
+  top: 160px;
 }
 
 .ad-placeholder {
